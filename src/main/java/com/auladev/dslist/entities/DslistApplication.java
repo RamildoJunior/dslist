@@ -1,4 +1,4 @@
-package com.auladev.dslist;
+package com.auladev.dslist.entities;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

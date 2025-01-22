@@ -1,9 +1,15 @@
 package com.auladev.dslist.entities;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_game_list")
 public class GameList {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
@@ -40,7 +46,7 @@ public class GameList {
 
         GameList gameList = (GameList) o;
 
-        if (!Objects.equals(id, gameList.id));
+        return  (!Objects.equals(id, gameList.id));
 
     }
 

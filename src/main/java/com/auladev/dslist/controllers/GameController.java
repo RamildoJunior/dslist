@@ -19,7 +19,7 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @GetMapping(value = "/{id")
+    @GetMapping
     public List<GameMinDTO> findAll(){
         List<GameMinDTO> result = gameService.findAll();
         return result;

@@ -1,8 +1,8 @@
 package com.auladev.dslist.controllers;
 
-import com.auladev.dslist.dto.GameDTO;
 import com.auladev.dslist.dto.GameListDTO;
 import com.auladev.dslist.dto.GameMinDTO;
+import com.auladev.dslist.dto.ReplacementDTO;
 import com.auladev.dslist.services.GameListService;
 import com.auladev.dslist.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +30,8 @@ public class GameListController {
         List<GameMinDTO> result = gameService.findByLsit(listId);
         return result;
     }
-    @PostMapping(value = "/{listId}/games")
-    public void move(@PathVariable Long listId){
-        gameListService
+    @PostMapping(value = "/{listId}/replacement")
+    public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body){
+        gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
     }
-
-
 }
